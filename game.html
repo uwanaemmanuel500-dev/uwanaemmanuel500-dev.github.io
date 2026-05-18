@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TopX Games - Top Up Instantly</title>
+
+<!-- Optional: prevents favicon 404 error -->
+<link rel="icon" href="./favicon.ico">
+
 <style>
     * {
     margin: 0;
@@ -251,7 +255,7 @@
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
+    navigator.serviceWorker.register('./sw.js', { scope: './' })
       .then(reg => console.log('SW registered:', reg.scope))
       .catch(err => console.log('SW registration failed:', err));
   });
